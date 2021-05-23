@@ -1,0 +1,82 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Doctors Profile{% endblock title %}
+{% block main-content %}
+<!-- 1st Product Slider -->
+<div class="m-3">
+    {% for a in add1 %}
+ <h2>Doctor Profiles for {{ a.Doctor_specialization }} </h2>
+ <!-- Slider 1 -->
+    {% if a.Doctor_specialization == 'cardiologist' %}
+    <div class="owl-carousel" id="slider1">
+        {% for b in product %}
+        <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+        {% endfor %}
+        </div>
+    {% elif a.Doctor_specialization == 'General Physician' %}
+        <div class="owl-carousel" id="slider1">
+            {% for b in product1 %}
+            <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+            {% endfor %}
+            </div>
+    {% elif a.Doctor_specialization == 'allergist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product2 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'anesthesiologist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product3 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'dentist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product4 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'dermatologist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product5 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'fertility specialist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product6 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'massage therapist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product7 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'neurologist' %}
+            <div class="owl-carousel" id="slider1">
+                {% for b in product8 %}
+                <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                {% endfor %}
+                </div>
+    {% elif a.Doctor_specialization == 'pediatrician' %}
+                <div class="owl-carousel" id="slider2">
+                    {% for b in product9 %}
+                    <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                    {% endfor %}
+                    </div>
+    {% else %}
+                <div class="owl-carousel" id="slider3">
+                    {% for b in product10 %}
+                    <a href="{% url 'doctor-profile' b.id %}" class="btn"><div class="item"><img src="{{b.doctor_photo.url}}" alt="" height="200px"><span class="fw-bold">{{b.doctor_name}}</span><br><span class="fs-5"> {{b.specialisation}}</span></div></a>
+                    {% endfor %}
+                    </div>
+    {% endif %}
+    {% endfor %}
+
+
+
+</div>
+{% endblock main-content %}

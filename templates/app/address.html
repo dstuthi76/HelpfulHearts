@@ -1,0 +1,42 @@
+
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Saved Profiles{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+ <h3>Welcome {{request.user.username}}</h3>
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'profile' %}" class="btn">Profile</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Your Saved Profile</a></li>
+    <li class="d-grid"><a href="{% url 'dietplan' %}" class="btn">Suggested DietPlan</a></li>
+   </ul>
+  </div>
+  <div class="col-sm-9 offset-sm-1">
+   <div class="row">
+     {% for add in add %}
+    <div class="col-sm-6">
+     <div class="card">
+      <div class="card-body">
+       <h3>Saved Profile {{forloop.counter}}</h3>
+       <p>Name: {{add.name}}</p>
+       <p>I Want To: {{add.Goal}}</p>
+       <p>Height: {{add.height_feet}} ft {{add.height_inch}} in</p>
+       <p>Weight: {{add.weight}}kgs</p>
+       <p>Gender: {{add.gender}}</p>
+       <p>Age:{{add.Age}}</p>
+       <p>BodyFat:{{add.Bodyfat}}</p>
+       <p>Activity Level:{{add.Activity_level}}</p>
+       <p>Primary Diet:{{add.Primary_Diet}}</p>
+      </p>
+
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

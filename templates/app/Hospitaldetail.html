@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Hospital{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{product.Hospital_photo.url}}" alt="" class="img-fluid img-thumbnail">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{product.name}}</h2>
+   <hr>
+   <small><p>To better serve the wide-ranging needs of the community, the modern hospital has often developed outpatient facilities, as well as emergency, psychiatric, and rehabilitation services. In addition, “bedless hospitals” provide strictly ambulatory (outpatient) care and day surgery. Patients arrive at the facility for short appointments. They may also stay for treatment in surgical or medical units for part of a day or for a full day, after which they are discharged for follow-up by a primary care health provider.
+
+
+    <br> Hospitals have long existed in most countries. Developing countries, which contain a large proportion of the world’s population, generally do not have enough hospitals, equipment, and trained staff to handle the volume of persons who need care. Thus, people in these countries do not always receive the benefits of modern medicine, public health measures, or hospital care, and they generally have lower life expectancies. </p> <br></small>
+<a href="{{ product.Location }}" class="btn btn-dark shadow px-5 py-2">Location</a>
+   <h5 class="mt-5">About Hospital</h5>
+   <ul>
+    <li>Description: {{product.description}}  </li>
+        <li>Phone.no- {{product.Phone}} </li>
+    <li>City: {{product.City}} </li>
+
+    <li>Pincode: {{product.zipcode}} </li>
+    <li>Category: {{product.type}} </li>
+    <li>Timings: 24/7</li>
+   </ul>
+  </div>
+ </div>
+    </div>
+{% endblock main-content %}

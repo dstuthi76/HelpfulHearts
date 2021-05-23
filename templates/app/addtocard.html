@@ -1,0 +1,55 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Appointment details{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <h1 class="text-center mb-5">Appointment sent profiles</h1>
+  <div class="col-sm-8">
+  <div class="card">
+   <div class="card-body">
+    <h3>PROFILES</h3>
+     {% if messages %}
+     {% for message in messages %}
+         <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+      {% endfor %}
+   {% endif %}
+    {% for Doctorname in Doctornames %}
+    <div class="row">
+     <div class="col-sm-3 text-center align-self-center"><img src="{{Doctorname.doctor_name.doctor_photo.url}}" alt="" srcset="" class="img-fluid img-thumbnail shadow-sm" height="150" width="150"> </div>
+     <div class="col-sm-9">
+      <div>
+       <h7>Appointment :{{forloop.counter}}</h7>
+       <h5>{{Doctorname.doctor_name.doctor_name}}</h5>
+       <h7>{{Doctorname.doctor_name.specialisation}}</h7>
+       <p class="mb-2 text-muted small">{{Doctorname.doctor_name.description}}</p>
+       <div class="d-flex justify-content-between">
+        <p class="mb-0"><span><strong>Consultantfee Rs.{{Doctorname.doctor_name.consultant_fee}}</strong></span></p>
+       </div>
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+    {% for add in slot %}
+    <div class="row">
+     <div class="col-sm-9">
+      <div>
+       <h7>For Appointment {{forloop.counter}} Join the google meet at {{add.slot}} on {{add.date}}</h7>
+      <a href="{{Doctorname.doctor_name.Google_meet}}" class="btn btn-sm btn-dark mr-3">Google meet </a>
+      </div>
+    </div>
+
+    </div>
+    {% endfor %}
+
+
+
+   </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+
+{% endblock main-content %}

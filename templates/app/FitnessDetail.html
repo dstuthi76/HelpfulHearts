@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Hospital{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{product.Fitness_photo.url}}" alt="" class="img-fluid img-thumbnail">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{product.name}}</h2>
+   <hr>
+   <p>The Fitness Center is a health, recreational, and social facility geared towards exercise, sports, and other physical activities. It may be a for-profit commercial facility or a community- or institutionally-supported center.
+   <br> Fitness centers provide a wide variety of exercise equipment for you to use. From free weights to resistance training machines to cardio machines to core stability equipment, you can exercise in lots of different ways because there are so many options available. </p> <br>
+   <a href="{{ product.Location }}" class="btn btn-dark shadow px-5 py-2">Location</a>
+   <h5 class="mt-5">About {{product.type}}</h5>
+   <ul>
+    <li>Description: {{product.description}}  </li>
+        <li> </li>
+    <li>City: {{product.City}} </li>
+    <li><a href="{{product.Location}}" name="Location" >Location</a> </li>
+    <li>Pincode: {{product.zipcode}} </li>
+    <li>Category: {{product.type}}</li>
+    <li>Timings: 9am to 5pm</li>
+   </ul>
+  </div>
+ </div>
+    </div>
+{% endblock main-content %}

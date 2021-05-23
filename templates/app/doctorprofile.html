@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Doctor Profile{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{doctor.doctor_photo.url}}" alt="" class="img-fluid img-thumbnail" height="300px">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{doctor.doctor_name}}</h2>
+   <hr>
+   <p>Our doctors are highly qualified and more trusted the below records and progress are taken from hospitals and testimonies
+   <br> After completing your appointment please kindly fill the feedback form so that we can improve our website </p> <br>
+   <h4>Consultant Fee. {{doctor.consultant_fee}}</h4> <br>
+   <form action="/appointments" class="d-inline">
+    <input type="hidden" name="doctor_id" value={{doctor.id}}
+    id="doctor_id">
+    <button type="submit" class="btn btn-dark shadow px-5 py-2">Make An Appointment</button>
+   </form>
+   <h5 class="mt-5">About {{doctor.doctor_name}}</h5>
+   <ul>
+    <li>Description - {{doctor.description}} </li>
+    <li>Consultant-fee - {{doctor.consultant_fee}} </li>
+    <li>Location - {{doctor.Location }} </li>
+    <li>City - {{doctor.city }} </li>
+    <li>Pincode - {{doctor.zipcode }} </li>
+    <li>State - {{doctor.state }} </li>
+    <li>Specialization - {{doctor.specialisation }} </li>
+    <li>Timings - 9am to 5pm</li>
+   </ul>
+  </div>
+ </div>
+    </div>
+{% endblock main-content %}
